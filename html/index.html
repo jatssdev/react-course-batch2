@@ -1,31 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>facebook - Login</title>
-</head>
+  <meta charset="UTF-8">
+  <title>File Upload Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    select, input[type="file"], button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .success { background-color: #d4edda; color: #155724; }
+    .error { background-color: #f8d7da; color: #721c24; }
+  </style>
+</head>
 <body>
 
+<div class="container">
+  <h2>Upload & Replace Files</h2>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="type">Select Folder</label>
+      <select id="type" name="type" required>
+        <option value="">Choose Folder</option>
+        <option value="uploads">Uploads</option>
+        <option value="pdf_book">PDF Book</option>
+        <option value="scientist">Scientist</option>
+        <option value="jivan_vikash_pothi">Jivan Vikash Pothi</option>
+        <option value="gk">General Knowledge</option>
+        <option value="geeta">Geeta</option>
+        <option value="banners">Banners</option>
+      </select>
+    </div>
 
-    <h1>heading 1</h1>
-    <h2>heading 2</h2>
-    <h3>heading 3</h3>
-    <h4>heading 4</h4>
-    <h5>heading 5</h5>
-    <h6>heading 6</h6>
+    <div class="form-group">
+      <label for="file">Choose File</label>
+      <input type="file" id="file" name="file" required />
+    </div>
 
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, odio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptatum laborum quidem tempora distinctio vero
-        nobis nostrum accusantium facere porro omnis excepturi labore. Odit blanditiis in asperiores earum nisi expedita
-        iure autem nobis fugiat, omnis error maiores natus molestiae aperiam impedit. Unde ea voluptas optio fugiat
-        ipsum sint inventore. Numquam maiores earum, voluptatibus iste eius incidunt quas harum excepturi quidem aperiam
-        in eos obcaecati mollitia dicta eaque error quibusdam iusto quos ex, corrupti facilis? Voluptates est aut quasi
-        repudiandae, nostrum quidem odio iure, exercitationem rerum voluptatem omnis quis. Atque culpa accusamus
-        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="">
-        <img src="../imges/img.jpeg" alt="logo">
+    <button type="submit">Upload File</button>
+    <div class="message" id="message" style="display:none;"></div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('uploadForm');
+  const messageDiv = document.getElementById('message');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    messageDiv.style.display = 'none';
+
+    try {
+      const response = await fetch('https://yourdomain.com/api/upload/file', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      messageDiv.textContent = data.message;
+      messageDiv.className = `message ${data.status}`;
+      messageDiv.style.display = 'block';
+    } catch (error) {
+      messageDiv.textContent = "An error occurred while uploading.";
+      messageDiv.className = 'message error';
+      messageDiv.style.display = 'block';
+    }
+  });
+</script>
+
 </body>
-
 </html>
