@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            height: 500px;
+            position: relative;
+            width: 300px;
+            border: 2px solid gray;
+            overflow: hidden;
+        }
+
+        .card .box {
+            height: 100%;
+            width: 100%;
+            background-color: blue;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: .5s;
+        }
+
+        .card:hover .box {
+            top: 0;
+        }
+
+        .container:hover{
+            font-size: 100px;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_UF1000,1000_QL80_.jpg" alt="">
+        <div class="box">
+            <h2>Apple i Phone 17</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, assumenda?</p>
+
+            <button>Buy Now </button>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        Lorem ipsum dolor sit amet.
+    </div>
+
+</body>
+
+</html>
