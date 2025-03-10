@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 300px;
+        }
+
+        .main>p {
+            padding: 20px;
+            color: white;
+            font-size: 20px;
+            background-color: tomato;
+        }
+
+        .main .drop {
+            display: none;
+        }
+
+        .main:hover .drop {
+            display: block;
+        }
+
+        .main .drop p {
+            background-color: gray;
+            border-bottom: 1px solid wheat;
+            padding: 10px;
+            color: white;
+
+        }
+
+        .main .drop p:hover {
+            background-color: rgb(80, 78, 78);
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="main">
+        <p>Select Option</p>
+        <div class="drop">
+            <p>Home</p>
+            <p>Home2</p>
+            <p>Home3</p>
+            <p>Home4</p>
+            <p>Home5</p>
+
+        </div>
+    </div>
+</body>
+
+</html>

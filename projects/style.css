@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    background-color: black;
+    color: white;
+}
+
+.navbar .links {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.navbar ul li {
+    list-style-type: none;
+}
+
+.navbar a:hover {
+    background-color: gray;
+    color: black;
+}
+
+.navbar .search a:hover {
+    background-color: tomato;
+    color: white;
+}
+
+
+/* hero section  */
+
+.hero {
+    background-image: url('https://www.w3schools.com/w3images/chicago.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+
+.hero h2 {
+    margin: 20px 0;
+}
+
+/* band section  */
+.band .content {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.band {
+    padding: 100px;
+}
+
+.band .images {
+    justify-content: space-around;
+    display: flex;
+}
+
+.band .images .img {
+    width: 20%;
+}
+
+.band img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.band .images {
+    margin: 20px 0;
+}
+
+.band h3 {
+    color: gray;
+    font-size: 14px;
+    margin: 20px 0;
+    font-weight: 400;
+
+}
+
+.band .content>p {
+    text-align: justify;
+}
+
+.tour .content {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.tour .content>h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.tour .content>h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.tour {
+    background-color: black;
+    color: white;
+    padding: 100px;
+}
+
+.tour ul li {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid gray;
+    padding: 10px 20px;
+}
+
+
+.tour ul li span:last-child {
+    background-color: tomato;
+    color: white;
+
+}
+
+.tour ul li span:first-child {
+
+    color: rgb(71, 71, 71);
+
+}
+
+.tour ul {
+    background-color: white;
+    color: black;
+    margin: 30px 0;
+}
+
+.tour ul li:last-child {
+    justify-content: space-between;
+}
+
+.tour ul li:last-child span:last-child {
+    background-color: black;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+
+.tour .cards {
+    display: flex;
+    gap: 20px;
+
+}
+
+.tour .cards .card {
+    background-color: white;
+    color: black;
+
+}
+
+.tour img {
+    width: 100%;
+}
+
+.tour button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+
+.tour .cards .card div {
+    padding: 15px;
+}
