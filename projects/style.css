@@ -189,3 +189,28 @@
 .tour .cards .card div {
     padding: 15px;
 }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .drop p {
+    background-color: gray;
+    padding: 8px;
+}
+
+.dropdown .drop p:hover {
+    background-color: rgb(85, 85, 85);
+}
+
+.dropdown .drop {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+}
+
+.dropdown:hover .drop {
+    display: block;
+}
